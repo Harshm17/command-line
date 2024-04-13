@@ -34,3 +34,88 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main" style="display: flex;">
+        <div id="lcontainer" style="border: 2px solid black; width: 250px; border-radius: 10px; background-color: aqua;">
+            <div id="title" style="display: flex;">
+                <textarea name="title" id="tarea" cols="30" rows="3" placeholder="Title"></textarea>
+                <input type="color" id="color" style="margin-top: 5%; border-radius: 80%;">
+            </div>
+            <div id="notes">
+                <textarea name="notes" id="narea" cols="30" rows="10"></textarea>
+            </div>
+            <div id="button">
+                <button style="width: 100%;">add notes</button>
+            </div>
+            
+    
+        </div>
+        <div id="rcontainer" style="display: flex;">
+        </div>
+    </div>
+    
+ <script>
+    let btn =document.getElementById("button");
+      let text=document.getElementById("tarea");
+      let color =document.getElementById("color"); 
+      let note =document.getElementById("narea");
+      let main=document.getElementById("rcontainer");
+    function addnotes(){
+        if(text.value==="")
+        {
+            alert("enter title");
+            return;
+        }
+        
+        if(note.value==="")
+        {
+            alert("enter notes");
+            return;
+        }
+     
+        let div =document.createElement("div");
+        let h1=document.createElement("h3");
+        let p =document.createElement("p");
+        let crossbtn =document.createElement("button");
+        crossbtn.innerText="X";
+        h1.innerText=text.value;
+        p.innerText=note.value;
+        div.appendChild(h1);
+        div.appendChild(p);
+        div.appendChild(crossbtn);
+        div.style.backgroundColor=color.value;
+        main.appendChild(div);
+        empty();
+        crossbtn.addEventListener('click',function(){
+            div.style.display="none";
+        });
+
+       
+    }
+    btn.addEventListener('click',addnotes);
+    function empty()
+    {
+        note.value="";
+        text.value="";
+        
+    }
+
+
+ </script>
+</body>
+
+</html>
