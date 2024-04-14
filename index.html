@@ -1,84 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="font-size: 14px;
+font-family: 'Roboto Mono', 'monospace';">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div{
-            padding: 2px;
+        img{
+            height: 20px;
+            margin-top: 17px;
+            margin-left: 10px;
+        }
+        input{
+            margin-left: 10px;
+            outline: none;
+            border: 0cap;
+            background-color: rgb(246, 243, 243);
+            width: 80%;
+        }
+        button{
+            background-color: black;
+             color: white;
+             border-radius: 8px;
+             height: 70%;
+             margin-top: 1%;
         }
     </style>
 </head>
 <body>
-
-    <div id="main" style="display: flex;">
-        <div id="lcontainer" style="border: 2px solid black; width: 250px; border-radius: 10px; background-color: aqua;">
-            <div id="title" style="display: flex;">
-                <textarea name="title" id="tarea" cols="30" rows="3" placeholder="Title"></textarea>
-                <input type="color" id="color" style="margin-top: 5%; border-radius: 80%;">
+    <div id="container" style="width: 50%; margin-left: 25%;">
+        <header>
+            <div>
+                  <h1>Github</h1>    
             </div>
-            <div id="notes">
-                <textarea name="notes" id="narea" cols="30" rows="10"></textarea>
-            </div>
-            <div id="button">
-                <button style="width: 100%;">add notes</button>
-            </div>
-            
-    
+        </header>
+        <div id="sbar" style=" background-color: rgb(246, 243, 243); border-radius: 15px; height: 55px; display: flex;">
+             <img src="./script.js/5636698.png" alt="" >
+             <input id="item" type="text" placeholder="Search Github username">
+             <button onclick="show()">Search</button>
         </div>
-        <div id="rcontainer" style="display: flex;">
+        <div id="dbar" style=" background-color: rgb(246, 243, 243); border-radius: 15px; height: 110px; margin-top: 15px; padding: 40px; color:  rgb(81, 76, 76); font-size: large;">Please enter your github id above
         </div>
-    </div>
-    
- <script>
-    let btn =document.getElementById("button");
-      let text=document.getElementById("tarea");
-      let color =document.getElementById("color"); 
-      let note =document.getElementById("narea");
-      let main=document.getElementById("rcontainer");
-    function addnotes(){
-        if(text.value==="")
-        {
-            alert("enter title");
-            return;
-        }
-        
-        if(note.value==="")
-        {
-            alert("enter notes");
-            return;
-        }
-     
-        let div =document.createElement("div");
-        let h1=document.createElement("h3");
-        let p =document.createElement("p");
-        let crossbtn =document.createElement("button");
-        crossbtn.innerText="X";
-        h1.innerText=text.value;
-        p.innerText=note.value;
-        div.appendChild(h1);
-        div.appendChild(p);
-        div.appendChild(crossbtn);
-        div.style.backgroundColor=color.value;
-        main.appendChild(div);
-        empty();
-        crossbtn.addEventListener('click',function(){
-            div.style.display="none";
-        });
-
        
-    }
-    btn.addEventListener('click',addnotes);
-    function empty()
-    {
-        note.value="";
-        text.value="";
-        
-    }
+    </div>
 
+    
 
- </script>
+    <script src="./script.js/script.js"></script>
 </body>
-
 </html>
